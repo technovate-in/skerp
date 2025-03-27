@@ -1,6 +1,6 @@
 frappe.ui.form.on('Packet Master', { 
   //// Filter For Items Child Table
-    inward_no: function(frm){
+    inward_no: async function(frm){
         filter_items(frm);
   
        //// Fetch From Purchase Receipt 
@@ -8,7 +8,7 @@ frappe.ui.form.on('Packet Master', {
           // First, fetch the last active 'Daily Rate Master'
   
                   // Then, fetch the 'Purchase Receipt' items
-                  frappe.call({
+                  await frappe.call({
                       method: 'frappe.client.get',
                       args: {
                           doctype: 'Purchase Receipt',
@@ -71,7 +71,7 @@ frappe.ui.form.on('Packet Master', {
         }
         
         /// Packet Master: Item Batch no. Fetch
-        // process_items(frm);
+        process_items(frm);
     },
   
   /// Packet Master
@@ -136,37 +136,37 @@ frappe.ui.form.on('Packet Master', {
     }
   };
   
-//   async function process_items(frm) {
-//     console.log("Hello");
-//     // if (!frm.doc.items || frm.doc.items.length === 0) return; // Skip if no items
+  async function process_items(frm) {
+    console.log("Hello");
+    if (!frm.doc.items || frm.doc.items.length === 0) return; // Skip if no items
   
-//     let promises = frm.doc.items.map(item => 
-//         item.serial_and_batch_bundle ? update_batch_no(item) : frappe.throw(`Batch No. Error: Serial and Batch Bundle is missing for item ${item.item_code}`)
-//     );
-//     console.log("Hello");
-//     console.log(promises)
+    let promises = frm.doc.items.map(item => 
+        item.serial_and_batch_bundle ? update_batch_no(item) : frappe.throw(`Batch No. Error: Serial and Batch Bundle is missing for item ${item.item_code}`)
+    );
+    console.log("Hello");
+    console.log(promises)
   
-//     try {
-//         await Promise.all(promises); // Wait for all API calls
-//         frm.refresh_field('items'); // Refresh once after all updates
-//     } catch (error) {
-//         frappe.msgprint({ title: "Error", message: error.message, indicator: "red" });
-//     }
-//   }
+    try {
+        await Promise.all(promises); // Wait for all API calls
+        frm.refresh_field('items'); // Refresh once after all updates
+    } catch (error) {
+        frappe.msgprint({ title: "Error", message: error.message, indicator: "red" });
+    }
+  }
   
-//   async function update_batch_no(item) {
-//     try {
-//         let { message } = await frappe.call({
-//             method: 'frappe.client.get',
-//             args: { doctype: 'Serial and Batch Bundle', name: item.serial_and_batch_bundle }
-//         });
+  async function update_batch_no(item) {
+    try {
+        let { message } = await frappe.call({
+            method: 'frappe.client.get',
+            args: { doctype: 'Serial and Batch Bundle', name: item.serial_and_batch_bundle }
+        });
   
-//         if (message?.entries?.length) {
-//             item.batch_no = message.entries[0].batch_no;
-//         } else {
-//             throw new Error(`No entries found in Serial and Batch Bundle: ${item.serial_and_batch_bundle}`);
-//         }
-//     } catch (error) {
-//         throw new Error(`Error fetching Serial and Batch Bundle: ${item.serial_and_batch_bundle}`);
-//     }
-//   }
+        if (message?.entries?.length) {
+            item.batch_no = message.entries[0].batch_no;
+        } else {
+            throw new Error(`No entries found in Serial and Batch Bundle: ${item.serial_and_batch_bundle}`);
+        }
+    } catch (error) {
+        throw new Error(`Error fetching Serial and Batch Bundle: ${item.serial_and_batch_bundle}`);
+    }
+  }
