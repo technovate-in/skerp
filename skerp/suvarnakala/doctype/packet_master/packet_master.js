@@ -99,7 +99,7 @@ frappe.ui.form.on('Packet Master', {
       // });
 
       frappe.call({
-          method: 'purchase_receipt_in_packet_master',
+          method: 'skerp.suvarnakala.api.pm_inward_no.purchase_receipt_in_packet_master',
           callback: function(response) {
             //   console.log(response.message);
               

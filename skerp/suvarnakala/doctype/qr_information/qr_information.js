@@ -116,7 +116,7 @@ frappe.ui.form.on('QR Information', {
                                       });
                                       
                                       frappe.call({
-                                          method: 'get_spi_from_batch',
+                                          method: 'skerp.suvarnakala.api.sales_person_issue_item_batch.get_spi_from_batch',
                                           args: {
                                               'batch_no': batch_no,
                                           },
@@ -132,7 +132,7 @@ frappe.ui.form.on('QR Information', {
                                       });
                                       
                                       frappe.call({
-                                          method: 'get_sales_order_from_batch',
+                                          method: 'skerp.suvarnakala.api.estimate_order_item_batch.get_sales_order_from_batch',
                                           args: {
                                               'batch_no': batch_no,
                                           },

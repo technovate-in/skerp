@@ -109,7 +109,7 @@ class SupplierTransactionHandler {
 
   async getItemStocks(item_codes) {
       const response = await frappe.call({
-          method: 'non_empty_item_batch_count',
+          method: 'skerp.suvarnakala.api.non_item_batches.non_empty_item_batch_count_execute',
           args: { items: item_codes }
       });
       // console.log(response.message);
