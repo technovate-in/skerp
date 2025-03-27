@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-27 14:47:58.678170",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "external_item_code",
+  "quantity",
+  "gross_weight_gram",
+  "weightgramct",
+  "labour_touch",
+  "labour_grams",
+  "uom",
+  "rate",
+  "amount",
+  "column_break_qkze",
+  "purity",
+  "pcs",
+  "linked_packet",
+  "batch_no",
+  "warehouse"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:false",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fetch_from": "item_code.custom_external_code",
+   "fieldname": "external_item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gross_weight_gram",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Gross Weight (Grams)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "weightgramct",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Net Weight (Grams)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "labour_touch",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Labour Touch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_grams",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Labour (Grams)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "amount_master.rate_per_gram",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Amount",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qkze",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Purity",
+   "options": "Purity Master",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "pcs",
+   "fieldtype": "Data",
+   "label": "Pcs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linked_packet",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Linked Packet",
+   "options": "Packet Master",
+   "read_only": 1
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Batch No.",
+   "options": "Batch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-27 14:47:58.678170",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Sales Person Issue Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

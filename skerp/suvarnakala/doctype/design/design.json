@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "autoname": "format:{item_sub_group}-{design}",
+ "creation": "2025-03-27 14:30:07.605287",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_group",
+  "sub_group_range",
+  "pcs",
+  "column_break_vhb0",
+  "item_sub_group",
+  "design",
+  "range_assigned",
+  "weight_range_section",
+  "from_range",
+  "column_break_c2o0",
+  "to_range"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Group",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_group_range",
+   "fieldtype": "Data",
+   "label": "Sub Group Range",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pcs",
+   "fieldtype": "Int",
+   "label": "Pcs"
+  },
+  {
+   "fieldname": "column_break_vhb0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_sub_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sub Group",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "design",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Design Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "range_assigned",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Design Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight_range_section",
+   "fieldtype": "Section Break",
+   "label": "Weight Range"
+  },
+  {
+   "fieldname": "from_range",
+   "fieldtype": "Float",
+   "label": "From Range"
+  },
+  {
+   "fieldname": "column_break_c2o0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_range",
+   "fieldtype": "Float",
+   "label": "To Range"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-27 14:30:07.605287",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Design",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "range_assigned,design",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

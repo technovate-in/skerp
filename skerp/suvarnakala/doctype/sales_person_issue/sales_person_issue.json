@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SPI - {sales_person} - {###}",
+ "creation": "2025-03-27 14:43:29.300065",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "sales_person",
+  "issue_date",
+  "returned",
+  "column_break_zmdr",
+  "qr_scan",
+  "packet_master",
+  "items_section",
+  "items",
+  "section_break_o87j",
+  "column_break_ennb",
+  "total_net_weight_grams",
+  "total_weights",
+  "total_amount",
+  "rounded_amount",
+  "column_break_6tr0",
+  "received_by",
+  "issued_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "returned",
+   "fieldtype": "Check",
+   "label": "Returned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_zmdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_scan",
+   "fieldtype": "Data",
+   "label": "QR Scan",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "packet_master",
+   "fieldtype": "Table",
+   "label": "Packet Number",
+   "options": "Sales Person Issue Packets"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Sales Person Issue Item"
+  },
+  {
+   "fieldname": "section_break_o87j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ennb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_net_weight_grams",
+   "fieldtype": "Float",
+   "label": "Total Net Weight (Grams)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_weights",
+   "fieldtype": "Float",
+   "label": "Total Gross Weight (Grams)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rounded_amount",
+   "fieldtype": "Currency",
+   "label": "Rounded Amount",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6tr0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Received By",
+   "options": "Sales Person",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issued_by",
+   "fieldtype": "Data",
+   "label": "Issued By",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-27 14:43:29.300065",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Sales Person Issue",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "issue_date",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

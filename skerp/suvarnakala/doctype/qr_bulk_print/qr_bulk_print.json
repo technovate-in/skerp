@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-27 15:03:53.790466",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "packets_section",
+  "packets",
+  "column_break_uorf",
+  "items_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "packets_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "packets",
+   "fieldtype": "Table",
+   "label": "Packets",
+   "options": "QR Bulk Print Packets"
+  },
+  {
+   "fieldname": "column_break_uorf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Packet master item",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-03-27 15:04:08.513024",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "QR Bulk Print",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PS User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PS Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

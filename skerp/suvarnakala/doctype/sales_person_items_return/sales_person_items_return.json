@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SPI - {sales_person} - {###}",
+ "creation": "2025-03-27 14:54:46.793833",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "sales_person",
+  "issue_date",
+  "sales_person_issue_id",
+  "packets_returned",
+  "column_break_zmdr",
+  "qr_scan",
+  "packets_issued",
+  "is_packet_transfered",
+  "items_section",
+  "items",
+  "section_break_o87j",
+  "column_break_ennb",
+  "total_net_weight_grams",
+  "total_weights",
+  "total_amount",
+  "rounded_amount",
+  "column_break_6tr0",
+  "received_by",
+  "issued_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person"
+  },
+  {
+   "default": "Today",
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Return Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_person_issue_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sales Person Issue ID ",
+   "options": "Sales Person Issue"
+  },
+  {
+   "fieldname": "packets_returned",
+   "fieldtype": "Table",
+   "label": "Packets Returned",
+   "options": "Sales Person Issue Packets"
+  },
+  {
+   "fieldname": "column_break_zmdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_scan",
+   "fieldtype": "Data",
+   "label": "QR Scan",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "packets_issued",
+   "fieldtype": "Table",
+   "label": "Packets Issued",
+   "options": "Sales Person Issue Packets"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_packet_transfered",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is Packet Transfered"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Sales Person Issue Item"
+  },
+  {
+   "fieldname": "section_break_o87j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ennb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_net_weight_grams",
+   "fieldtype": "Float",
+   "label": "Total Net Weight (Grams)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_weights",
+   "fieldtype": "Float",
+   "label": "Total Gross Weight (Grams)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rounded_amount",
+   "fieldtype": "Currency",
+   "label": "Rounded Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6tr0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "label": "Received By",
+   "options": "Sales Person",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issued_by",
+   "fieldtype": "Data",
+   "label": "Issued By",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-27 14:54:46.793833",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Sales Person Items Return",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

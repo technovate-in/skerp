@@ -1,0 +1,216 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-03-27 12:14:59.215644",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "inward_no",
+  "image",
+  "column_break_cyrw",
+  "packet_split",
+  "number_of_packets",
+  "issued",
+  "section_break_mbrz",
+  "gross_weight",
+  "net_weight",
+  "avg_rate",
+  "item_amount",
+  "remarks",
+  "column_break_srol",
+  "total_pcs",
+  "total_quantity",
+  "total_mani_moti_weight",
+  "lbr_amount",
+  "lbr_rate",
+  "jadtar_charges",
+  "single_packet",
+  "multiple_packet",
+  "multiple_packet_split",
+  "details_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "inward_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inward No",
+   "options": "Purchase Receipt",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image"
+  },
+  {
+   "fieldname": "column_break_cyrw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.issued == 0",
+   "fieldname": "packet_split",
+   "fieldtype": "Select",
+   "label": "Packet Split",
+   "options": "No Split\nSingle Packet\nMultiple Packet\nMultiple Packet (Split)",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.packet_split == 'Multiple Packet (Split)'",
+   "fieldname": "number_of_packets",
+   "fieldtype": "Int",
+   "label": "Number of Packets",
+   "mandatory_depends_on": "eval:doc.packet_split == 'Multiple Packet (Split)'"
+  },
+  {
+   "default": "0",
+   "fieldname": "issued",
+   "fieldtype": "Check",
+   "label": "Issued",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mbrz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight (Grams)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "net_weight",
+   "fieldtype": "Float",
+   "label": "Net Weight (Grams)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "avg_rate",
+   "fieldtype": "Currency",
+   "label": "Avg. Rate",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "item_amount",
+   "fieldtype": "Currency",
+   "label": "Item Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_srol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_pcs",
+   "fieldtype": "Int",
+   "label": "Total Pcs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Int",
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_mani_moti_weight",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Mani Moti Weight",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "lbr_amount",
+   "fieldtype": "Currency",
+   "label": "Lbr Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "lbr_rate",
+   "fieldtype": "Currency",
+   "label": "Lbr Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "jadtar_charges",
+   "fieldtype": "Currency",
+   "label": "Jadtar Charges"
+  },
+  {
+   "fieldname": "single_packet",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Single Packet "
+  },
+  {
+   "fieldname": "multiple_packet",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Multiple Packet "
+  },
+  {
+   "fieldname": "multiple_packet_split",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Multiple Packet (Split)"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Packet master item",
+   "read_only": 1
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-27 12:14:59.215644",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Packet Master",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "gross_weight,net_weight,total_pcs",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

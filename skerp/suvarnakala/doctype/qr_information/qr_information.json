@@ -1,0 +1,281 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-27 14:59:23.285968",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "scan_section",
+  "qr_scan",
+  "detais_section",
+  "item",
+  "packet",
+  "pcs",
+  "column_break_ezrz",
+  "item_code",
+  "group",
+  "sub_group",
+  "design",
+  "section_break_gjju",
+  "net_weight",
+  "column_break_rayn",
+  "gross_weight",
+  "column_break_ovds",
+  "uom",
+  "section_break_xzul",
+  "batch_no",
+  "current_warehouse",
+  "rate",
+  "amount",
+  "column_break_sjcq",
+  "purity",
+  "sales_section",
+  "status",
+  "section_break_irse",
+  "sales_person_issue",
+  "estimate_order",
+  "column_break_kxxe",
+  "issued_to",
+  "sold_on",
+  "customer"
+ ],
+ "fields": [
+  {
+   "fieldname": "scan_section",
+   "fieldtype": "Section Break",
+   "label": "Scan"
+  },
+  {
+   "fieldname": "qr_scan",
+   "fieldtype": "Data",
+   "label": "QR Scan",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "detais_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "packet",
+   "fieldtype": "Link",
+   "label": "Packet",
+   "options": "Packet Master",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item.custom_pcs",
+   "fieldname": "pcs",
+   "fieldtype": "Data",
+   "label": "Pcs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ezrz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item.item_group",
+   "fieldname": "group",
+   "fieldtype": "Link",
+   "label": "Group",
+   "options": "Item Group",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item.custom_sub_group",
+   "fieldname": "sub_group",
+   "fieldtype": "Link",
+   "label": "Sub Group",
+   "options": "Item Group",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item.custom_design",
+   "fieldname": "design",
+   "fieldtype": "Link",
+   "label": "Design",
+   "options": "Design",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gjju",
+   "fieldtype": "Section Break",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "net_weight",
+   "fieldtype": "Data",
+   "label": "Net Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rayn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Data",
+   "label": "Gross Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ovds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xzul",
+   "fieldtype": "Section Break",
+   "label": "Stock"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch No",
+   "options": "Batch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_warehouse",
+   "fieldtype": "Link",
+   "label": "Current Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sjcq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purity",
+   "fieldtype": "Link",
+   "label": "Purity",
+   "options": "Purity Master",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_section",
+   "fieldtype": "Section Break",
+   "label": "Sales"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_irse",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_person_issue",
+   "fieldtype": "Link",
+   "label": "Sales Person Issue",
+   "options": "Sales Person Issue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "estimate_order",
+   "fieldtype": "Link",
+   "label": "Estimate Order",
+   "options": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kxxe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_person_issue.sales_person",
+   "fieldname": "issued_to",
+   "fieldtype": "Link",
+   "label": "Issued To",
+   "options": "Sales Person",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "estimate_order.transaction_date",
+   "fieldname": "sold_on",
+   "fieldtype": "Date",
+   "label": "Order Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "estimate_order.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-03-27 14:59:23.285968",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "QR Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PS Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

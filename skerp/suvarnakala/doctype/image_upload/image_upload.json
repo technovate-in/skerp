@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-27 14:39:18.401024",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bmfv",
+  "amended_from",
+  "upload_type",
+  "upload_images"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bmfv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Image Upload",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "upload_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Upload Type",
+   "options": "\nPacket Master\nDesign\nItem",
+   "reqd": 1
+  },
+  {
+   "fieldname": "upload_images",
+   "fieldtype": "Table",
+   "label": "Upload Images",
+   "options": "Image Upload Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-27 14:40:06.018313",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Image Upload",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

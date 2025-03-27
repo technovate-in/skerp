@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-27 15:08:16.946592",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "branch",
+  "warehouse",
+  "section_break_ijxm",
+  "qr_scan",
+  "section_break_oqac",
+  "items_scanned",
+  "section_break_enrc",
+  "items_not_scanned"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "section_break_ijxm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qr_scan",
+   "fieldtype": "Data",
+   "label": "QR Scan",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "section_break_oqac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.warehouse",
+   "fieldname": "items_scanned",
+   "fieldtype": "Table",
+   "label": "Items Scanned",
+   "options": "SAR Items"
+  },
+  {
+   "fieldname": "section_break_enrc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items_not_scanned",
+   "fieldtype": "Table",
+   "label": "Items NOT Scanned",
+   "options": "SAR Items",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-27 15:08:16.946592",
+ "modified_by": "Administrator",
+ "module": "SUVARNAKALA",
+ "name": "Stock Audit Reconciliation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
