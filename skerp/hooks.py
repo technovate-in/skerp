@@ -168,7 +168,7 @@ doc_events = {
     },
     "Sales Person Items Return": {
         "before_save": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_save.before_save",
-        "before_insert": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_insert.before_save",
+        "before_insert": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_insert.before_insert",
         "after_insert": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_after_insert.after_insert"
     },
     "Stock Entry": {
