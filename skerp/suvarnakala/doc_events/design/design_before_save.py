@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 
 def before_save(doc,method):
   design_before_validation(doc,method)
