@@ -2,7 +2,7 @@
 
 import frappe
 
-def after_rename(doc,method):
+def after_rename(doc, method, old_name, new_name, force=False):
  item_image_after_rename(doc,method)
 
 def item_image_after_rename(doc,method):

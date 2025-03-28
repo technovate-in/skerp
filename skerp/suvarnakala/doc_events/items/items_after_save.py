@@ -2,9 +2,9 @@
 import frappe
 
 def after_save(doc,method):
-  item_code_renmae(doc,method)
+  item_code_rename(doc,method)
 
-def item_code_renmae(doc,method):
+def item_code_rename(doc,method):
   # Check if design has changed
   previous_doc = doc.get_doc_before_save()
 

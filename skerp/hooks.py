@@ -8,7 +8,7 @@ app_license = "mit"
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["frappe/erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -43,17 +43,17 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Purchase Receipt" : "public/js/purchase_receipt.js",
-              "Purchase Order":"public/js/purchase_order.js",
-              "Sales Order":"public/js/sales_order.js",
-              "Sales Invoice":"public/js/sales_invoice.js",
-              "Stock Entry":"public/js/stock_entry.js",
-              "Work Order":"public/js/work_order.js",
-              "Supplier":"public/js/supplier.js",
-              "Item":"public/js/item.js",
-              "Delivery Note":"public/js/delivery_note.js",
-              "BOM":"public/js/bom.js",
-              "Item Group":"public/js/item_group.js",}
+doctype_js = {"Purchase Receipt": "public/js/purchase_receipt.js",
+              "Purchase Order": "public/js/purchase_order.js",
+              "Sales Order": "public/js/sales_order.js",
+              "Sales Invoice": "public/js/sales_invoice.js",
+              "Stock Entry": "public/js/stock_entry.js",
+              "Work Order": "public/js/work_order.js",
+              "Supplier": "public/js/supplier.js",
+              "Item": "public/js/item.js",
+              "Delivery Note": "public/js/delivery_note.js",
+              "BOM": "public/js/bom.js",
+              "Item Group": "public/js/item_group.js", }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -146,97 +146,94 @@ doctype_js = {"Purchase Receipt" : "public/js/purchase_receipt.js",
 # Document Events
 # ---------------
 # Hook on document methods and events
-## skerp.suvarnakala.doc_events/purchase_receipt/pr_after_submit.py
+# skerp.suvarnakala.doc_events/purchase_receipt/pr_after_submit.py
 
-##after_save and after_submit not there use on_update and on_submit
+# after_save and after_submit not there use on_update and on_submit
 
 doc_events = {
-  "Purchase Receipt": {
-    "before_save":"skerp.suvarnakala.doc_events.purchase_receipt.purchase_receipt_before_save.before_save",
-    "before_insert":"skerp.suvarnakala.doc_events.purchase_receipt.purchase_receipt_before_insert.before_insert" ,
-    "on_submit":"skerp.suvarnakala.doc_events.purchase_receipt.pr_after_submit.after_submit",
-	},
-  
-  "Packet Master": {
-    "before_save":"skerp.suvarnakala.doc_events.packet_master.pm_before_save.before_save",
-    "on_update":"skerp.suvarnakala.doc_events.packet_master.pm_after_save.after_save",
-    "after_insert":"skerp.suvarnakala.doc_events.packet_master.pm_after_insert.after_insert"
-  },
-  "Sales Person Issue": {
-    "before_save":"skerp.suvarnakala.doc_events.sales_person.sp_before_save.before_save",
-    "after_insert":"skerp.suvarnakala.doc_events.sales_person.sp_after_insert.after_insert",
-    "before_insert":"skerp.suvarnakala.doc_events.sales_person.sp_before_insert.before_insert"
-  },
-  "Sales Person Items Return": {
-    "before_save":"skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_save.before_save",
-    "before_insert":"skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_insert.before_save",
-    "after_insert":"skerp.suvarnakala.doc_events.sales_person_items_return.spr_after_insert.after_insert"
-  },
-  
-  "Stock Entry": {
-    "before_save":"skerp.suvarnakala.doc_events.stock_entry.se_before_save.before_save",
-    "on_submit":"skerp.suvarnakala.doc_events.stock_entry.se_after_submit.after_submit",
-    "before_validate":"skerp.suvarnakala.doc_events.stock_entry.se_before_validate.before_validate"
-  },
-  "Sales Order":{
-    "before_save":"skerp.suvarnakala.doc_events.estimate_oder.eo_before_save.before_save",
-    "on_submit":"skerp.suvarnakala.doc_events.estimate_oder.eo_after_submit.after_submit",
-    "before_update_after_submit":"skerp.suvarnakala.doc_events.estimate_oder.eo_after_save_submited_doc.after_save_submited_doc"
-  },
-  "Manufacturer":{
-    "after_insert":"skerp.suvarnakala.doc_events.manufacturer.manufacturer_after_insert.after_insert",
-    "before_save":"skerp.suvarnakala.doc_events.manufacturer.manufacturer_before_save,before_save"
-  },
-  
-  "Item":{
-    "before_save":"skerp.suvarnakala.doc_events.items.items_before_save.before_save",
-    "after_insert":"skerp.suvarnakala.doc_events.items.items_after_insert.after_insert",
-    "on_update":"skerp.suvarnakala.doc_events.items.items_after_save.after_save",
-    "after_rename":"skerp.suvarnakala.doc_events.items.items_after_rename.after_rename"
-  },
-  "Purchase Order":{
-    "before_save":"skerp.suvarnakala.doc_events.purchase_order.po_before_save.before_save"
-  },
-  "Image Upload":{
-    "before_save":"skerp.suvarnakala.doc_events.image_upload.image_save_before_save.before_save",
-    "on_submit":"skerp.suvarnakala.doc_events.image_upload.image_upload_after_submit.after_submit"
-  },
-  "Supplier":{
-    "after_insert":"skerp.suvarnakala.doc_events.supplier.supplier_after_insert.after_insert"
-  },
-  "QR Bulk Print":{
-    "before_save":"skerp.suvarnakala.doc_events.qr_bulk_print.qr_bulk_print_before_save.before_save"
-  },
-  "Daily Rate Master":{
-    "after_insert":"skerp.suvarnakala.doc_events.daily_rate_master.drm_after_insert.after_insert"
-  },
-  "Design":{
-    "before_save":"skerp.suvarnakala.doc_events.design.design_before_save.before_save",
-    "after_insert":"skerp.suvarnakala.doc_events.design.design_after_insert.after_insert",
-    "before_insert":"skerp.suvarnakala.doc_events.design.design_before_insert.before_insert"
-  },
-  "HUID Processing":{
-    "on_update":"skerp.suvarnakala.doc_events.huid_processing.huid_after_save.after_save",
-    "before_save":"skerp.suvarnakala.doc_events.huid_processing.huid_before_save.before_save"
-  },
-  "Customer":{
-    "after_insert":"skerp.suvarnakala.doc_events.customer.customer_after_insert.after_insert"
-  },
-  "Work Order":{
-    "before_save":"skerp.suvarnakala.doc_events.work_order.wo_before_save.before_save"
-  },
-  "Item Group":{
-    "before_save":"skerp.suvarnakala.doc_events.item_group.item_group_before_save.before_save"
-  },
-  "Delivery Note":{
-    "on_submit":"skerp.suvarnakala.doc_events.delivery_note.dn_after_submit.after_submit"
-  },
-  "BOM":{
-    "on_update":"skerp.suvarnakala.doc_events.bom.bom_after_save.after_save"
-  },
-  "Stock Audit Reconciliation":{
-    "before_save":"skerp.suvarnakala.doc_events.stock_audit_reconciliation.sar_before_save.before_save"
-  }
+    "Purchase Receipt": {
+        "before_save": "skerp.suvarnakala.doc_events.purchase_receipt.purchase_receipt_before_save.before_save",
+        "before_insert": "skerp.suvarnakala.doc_events.purchase_receipt.purchase_receipt_before_insert.before_insert",
+        "on_submit": "skerp.suvarnakala.doc_events.purchase_receipt.pr_after_submit.after_submit",
+    },
+    "Packet Master": {
+        "before_save": "skerp.suvarnakala.doc_events.packet_master.pm_before_save.before_save",
+        "on_update": "skerp.suvarnakala.doc_events.packet_master.pm_after_save.after_save",
+        "after_insert": "skerp.suvarnakala.doc_events.packet_master.pm_after_insert.after_insert"
+    },
+    "Sales Person Issue": {
+        "before_save": "skerp.suvarnakala.doc_events.sales_person.sp_before_save.before_save",
+        "after_insert": "skerp.suvarnakala.doc_events.sales_person.sp_after_insert.after_insert",
+        "before_insert": "skerp.suvarnakala.doc_events.sales_person.sp_before_insert.before_insert"
+    },
+    "Sales Person Items Return": {
+        "before_save": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_save.before_save",
+        "before_insert": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_before_insert.before_save",
+        "after_insert": "skerp.suvarnakala.doc_events.sales_person_items_return.spr_after_insert.after_insert"
+    },
+    "Stock Entry": {
+        "before_save": "skerp.suvarnakala.doc_events.stock_entry.se_before_save.before_save",
+        "on_submit": "skerp.suvarnakala.doc_events.stock_entry.se_after_submit.after_submit",
+        "before_validate": "skerp.suvarnakala.doc_events.stock_entry.se_before_validate.before_validate"
+    },
+    "Sales Order": {
+        "before_save": "skerp.suvarnakala.doc_events.estimate_oder.eo_before_save.before_save",
+        "on_submit": "skerp.suvarnakala.doc_events.estimate_oder.eo_after_submit.after_submit",
+        "before_update_after_submit": "skerp.suvarnakala.doc_events.estimate_oder.eo_after_save_submited_doc.after_save_submited_doc"
+    },
+    "Manufacturer": {
+        "after_insert": "skerp.suvarnakala.doc_events.manufacturer.manufacturer_after_insert.after_insert",
+        "before_save": "skerp.suvarnakala.doc_events.manufacturer.manufacturer_before_save.before_save"
+    },
+    "Item": {
+        "before_save": "skerp.suvarnakala.doc_events.items.items_before_save.before_save",
+        "after_insert": "skerp.suvarnakala.doc_events.items.items_after_insert.after_insert",
+        "on_update": "skerp.suvarnakala.doc_events.items.items_after_save.after_save",
+        "after_rename": "skerp.suvarnakala.doc_events.items.items_after_rename.after_rename"
+    },
+    "Purchase Order": {
+        "before_save": "skerp.suvarnakala.doc_events.purchase_order.po_before_save.before_save"
+    },
+    "Image Upload": {
+        "before_save": "skerp.suvarnakala.doc_events.image_upload.image_save_before_save.before_save",
+        "on_submit": "skerp.suvarnakala.doc_events.image_upload.image_upload_after_submit.after_submit"
+    },
+    "Supplier": {
+        "after_insert": "skerp.suvarnakala.doc_events.supplier.supplier_after_insert.after_insert"
+    },
+    "QR Bulk Print": {
+        "before_save": "skerp.suvarnakala.doc_events.qr_bulk_print.qr_bulk_print_before_save.before_save"
+    },
+    "Daily Rate Master": {
+        "after_insert": "skerp.suvarnakala.doc_events.daily_rate_master.drm_after_insert.after_insert"
+    },
+    "Design": {
+        "before_save": "skerp.suvarnakala.doc_events.design.design_before_save.before_save",
+        "after_insert": "skerp.suvarnakala.doc_events.design.design_after_insert.after_insert",
+        "before_insert": "skerp.suvarnakala.doc_events.design.design_before_insert.before_insert"
+    },
+    "HUID Processing": {
+        "on_update": "skerp.suvarnakala.doc_events.huid_processing.huid_after_save.after_save",
+        "before_save": "skerp.suvarnakala.doc_events.huid_processing.huid_before_save.before_save"
+    },
+    "Customer": {
+        "after_insert": "skerp.suvarnakala.doc_events.customer.customer_after_insert.after_insert"
+    },
+    "Work Order": {
+        "before_save": "skerp.suvarnakala.doc_events.work_order.wo_before_save.before_save"
+    },
+    "Item Group": {
+        "before_save": "skerp.suvarnakala.doc_events.item_group.item_group_before_save.before_save"
+    },
+    "Delivery Note": {
+        "on_submit": "skerp.suvarnakala.doc_events.delivery_note.dn_after_submit.after_submit"
+    },
+    "BOM": {
+        "on_update": "skerp.suvarnakala.doc_events.bom.bom_after_save.after_save"
+    },
+    "Stock Audit Reconciliation": {
+        "before_save": "skerp.suvarnakala.doc_events.stock_audit_reconciliation.sar_before_save.before_save"
+    }
 }
 
 # Scheduled Tasks
@@ -335,4 +332,3 @@ doc_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
