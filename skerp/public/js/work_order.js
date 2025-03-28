@@ -60,6 +60,7 @@ frappe.ui.form.on('Work Order', {
 custom_jadtar_selection: function(frm) {
   frm.set_value('custom_packet', '')
 },
+
 //// Fetch From Packet
 custom_packet: async function(frm) {
   if (frm.doc.custom_packet) {

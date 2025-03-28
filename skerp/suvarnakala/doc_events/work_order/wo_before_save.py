@@ -1,4 +1,5 @@
-import frappe 
+import frappe
+from frappe import _
 
 def before_save(doc,method):
   add_item_from_packet(doc,method)
