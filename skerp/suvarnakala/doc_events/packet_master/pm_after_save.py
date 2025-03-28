@@ -7,6 +7,7 @@ def packet_split(doc,method):
   def create_single_packet(original_doc, item):
       new_doc = frappe.get_doc({
           "doctype": "Packet Master",
+          "packet_split": "No Split",
           "inward_no": original_doc.inward_no,
           "items": [item],
       })
@@ -15,6 +16,7 @@ def packet_split(doc,method):
   def create_multiple_packet(original_doc, items):
       new_doc = frappe.get_doc({
           "doctype": "Packet Master",
+          "packet_split": "No Split",
           "inward_no": original_doc.inward_no,
           "items": items,
       })
