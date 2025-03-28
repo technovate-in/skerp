@@ -229,7 +229,7 @@ doc_events = {
         "on_submit": "skerp.suvarnakala.doc_events.delivery_note.dn_after_submit.after_submit"
     },
     "BOM": {
-        "on_update": "skerp.suvarnakala.doc_events.bom.bom_after_save.after_save"
+        "on_update": "skerp.suvarnakala.doc_events.bom.bom_before_save.before_save"
     },
     "Stock Audit Reconciliation": {
         "before_save": "skerp.suvarnakala.doc_events.stock_audit_reconciliation.sar_before_save.before_save"
