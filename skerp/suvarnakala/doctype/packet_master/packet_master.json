@@ -53,6 +53,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Single Packet",
    "depends_on": "eval:doc.issued == 0",
    "fieldname": "packet_split",
    "fieldtype": "Select",
@@ -188,7 +189,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-27 12:14:59.215644",
+ "modified": "2025-03-28 10:59:59.966314",
  "modified_by": "Administrator",
  "module": "SUVARNAKALA",
  "name": "Packet Master",
